@@ -3,7 +3,7 @@ var runOnHosts = ["fb.com", "facebook.com", "facebook.de", "youtube.com"];
 var stopWords = ["stupid","idiot","Retard","retarded","Fuck","Faggot","fag","Moron","Bitch","Creation","Flat","Nigger","Dyke","Sinner","Hell","Whore","Slut","Jesus","Bastard","Dike","Wetback","Wop","Twink","Spic","Spick","Gook","Illuminati","Douche","Coon","Dick","Dickhead","Kike","Gringo","Butch"];
 
 $.expr[":"].contains = $.expr.createPseudo(function(arg) {
-    return function( elem ) {
+    return function(elem) {
         return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
     };
 });
@@ -18,7 +18,7 @@ window.setInterval(function() {
 		for (var i in stopWords) {
 			var w = stopWords[i];
 
-			var $s = $(":contains(' " + w + " ')");
+			var $s = $(".UFIComment, .comment-thread-renderer").find(":contains(' " + w + " ')");
 			if ($s.length > 0) {
 
 				// facebook comments hiding
