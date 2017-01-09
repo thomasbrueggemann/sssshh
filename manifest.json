@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Sssshh!",
+  "description": "Chrome extension that tries to hide inappropriate comments on YouTube and Facebook (for now).",
+  "version": "1.0",
+
+  "browser_action": {
+	"name": "Sssshh!",
+	"icons": ["icon.png"],
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+	"<all_urls>",
+     "storage",
+     "tabs"
+  ],
+  "content_scripts": [ {
+    "js": [ "jquery-3.1.1.min.js", "background.js" ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}
